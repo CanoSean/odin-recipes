@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this script is not mine check out https://www.youtube.com/watch?v=4YQ4svkETS0
+        var i = 0; 			// Start Point
+        var images = [];	// Images Array
+        var time = 1000;	// Time Between Switch
+        // Image List
+        images[0] = "https://i.pinimg.com/originals/61/15/c9/6115c99191bb04d2382456f35b945118.png";
+        images[1] = "https://pbs.twimg.com/media/E_ShkJZXsAw5kpy?format=jpg&name=large";
+        images[2] = "https://i.ytimg.com/vi/J4_B2GcxWmE/maxresdefault.jpg";
+        // Change Image
+        function changeImg(){
+            
+            document.slide.src = images[i];
+            // Check If Index Is Under Max
+            if(i < images.length - 1){
+            // Add 1 to Index
+            i++; 
+            } else { 
+                // Reset Back To O
+                i = 0;
+            }
+            // Run function every x seconds
+            setTimeout("changeImg()", time);
+        }
+        // Run function when page loads
+        window.onload=changeImg;
+    </script>
+    <h1>Odin Recipes</h1>
+    <img name="slide" width="700px">
+    <ul>
+        <h2>My Favorite Recipes</h2>
+        <li><a href="/recipes/octohoney.html">Octohoney</a></li>
+        <li><a href="/recipes/ramegun.html">Ramen Gun</a></li>
+        <li><a href="/recipes/purplesoup.html">Pruple Soup</a></li>
+    </ul>
+
+</body>
+</html>
